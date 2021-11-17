@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js</title>
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <div id="root">
+        <label>
+            <h1>검색기능</h1>
+            <h3>배열 추가하기</h3>
+            <input type="text" v-model="value" v-on:keyup.enter="add">
+            <button v-on:click="add">배열 값 더하기</button>
+            <h3>배열 값 검색하기</h3>
+            <input type="text" v-model="find_word">
+            <button>배열 검색하기</button>
+        </label>
+        <label>
+            <h1>배열 값</h1>
+            <ol>
+                <li v-for="item in findItem"> {{ item }} </li>
+            </ol>
+        </label>
+    </div>
+</body>
+<script src="src/app.js"></script>
+
+</html>
