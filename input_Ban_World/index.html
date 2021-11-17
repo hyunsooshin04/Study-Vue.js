@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js</title>
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <div id="root">
+        <!-- <label>
+            <h1>AnimeNumber</h1>
+            <h3>{{ AnimeNumber }}</h3>
+            <input type="number" v-model.number="number">
+        </label>
+        <label>
+            <h1>HTML is not Programming Language</h1>
+            <textarea v-model="message"></textarea><br>
+            <p v-if="see">
+               {{ ban_message + "is not Programming language."}} <br>
+               {{ TimeError }}
+            </p>
+        </label> -->
+        <label>
+            <h1>제한 시간내에 문자 입력하기</h1>
+            <p class="start">금지문자 ( ","로 나누어 복수 입력 가능)<input type="text" v-model="ban_message"><br>
+            제한시간을 입력하세요. (초) <input type="text" v-model.number="time" > <button v-on:click="GameStart">시작하기</button></p> <br>
+            {{ timetmp + "초 남음" }}<br>
+            <textarea v-model="message" :disabled="!edit"></textarea><br>
+            {{ worlds + "개의 문자를 입력하셨습니다." }}<br><br>
+            {{ "벌점 : " + score + "(금지문자 1개당 -1점)" }}
+        </label>
+    </div>
+</body>
+<script src="src/app.js"></script>
+
+</html>
